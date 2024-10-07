@@ -30,10 +30,9 @@ app.set("views", "views");
 hbs.registerPartials("views/partials");
 
 //DB connection for online mongoDB atlas
-require("dotenv").config();
 async function startServer() {
   try {
-    const dbUri = process.env.MONGODB_URI;
+    const dbUri ="mongodb+srv://Dharmik:Kurlawala212@website.lr97j.mongodb.net/?retryWrites=true&w=majority&appName=website";
     await mongoose.connect(dbUri, {});
     console.log("Database connected successfully");
 
