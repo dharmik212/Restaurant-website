@@ -33,7 +33,7 @@ hbs.registerPartials("views/partials");
 async function startServer() {
   try {
     const dbUri =
-      "mongodb+srv://Dharmik:Kurlawala212@website.lr97j.mongodb.net/?retryWrites=true&w=majority&appName=website";
+      "${{ vars.DBURL}}";
     await mongoose.connect(dbUri, {});
     console.log("Database connected successfully");
 
