@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <title>Pizza Planet Website</title>
+</head>
+
+<body>
+    {{!-- //dynamic navbar comming from hsb --}}
+    {{>navbar data=details}}
+
+    {{!-- //dynamic slider comming from hsb --}}
+    {{>slider slides=slides}}
+ 
+    {{!-- banner1 section --}}
+    {{#each banner1}}
+    <section class="banner1_section background1 py-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-mg-12">
+                    <h1>{{this.body}}</h1>
+                    <p>{{this.text}}</p>
+                    <button class="btn btn-dark">Start</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/each}}
+
+    {{!-- menu section --}}
+    <section id="menu_section" class=" text-center py-3">
+        <div class="container">
+            <h1 class="text-center">Our Famous Menu</h1>
+            <div class="row mt-4">
+                {{!-- first column --}}
+                {{#each menu}}
+                <div class="col-md-4 ">
+                    <div class="card">
+                        <div class="card-body"> 
+                            <div class="container text-center py-2">
+                                <i class="{{this.icon}} service_icon"></i>
+                            </div>
+                            <h3>{{this.title}}</h3>
+                            <p>{{this.description}}</p>
+                            <p>{{this.price}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    {{!-- banner2 section --}}
+    {{#each banner2}}
+    <section class="banner2_section py-5">
+        <div class="container">
+            <div class="row">
+
+                {{!-- left section --}}
+                <div class="col-md-6 text-center pt-5">
+                    <h3>{{this.body}}</h3>
+                    <p>{{this.text}}</p>
+                    <button class="btn btn-primary">Location</button>
+                </div>
+
+                {{!-- right section --}}
+                <div class="col-md-6 text-center py-2">
+                    <img src="{{this.image}}" style="height: 270px;" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    {{/each}}
+
+    {{!-- banner3 section --}}
+    {{#each banner3}}
+    <section class="banner2_section py-5">
+        <div class="container">
+            <div class="row">
+
+                {{!-- left section --}}
+                <div class="col-md-6 text-center py-2">
+                    <img src="{{this.image}}" style="height: 270px;" alt="">
+                </div>
+
+                {{!-- right section --}}
+                <div class="col-md-6 text-center pt-5">
+                    <h3>{{this.body}}</h3>
+                    <p>{{this.text}}</p>
+                    <button class="btn btn-primary">Order now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/each}}
+
+    {{!-- Review section --}}
+    <section id="review_us" class="py-5 background1">
+        <div class="container">
+            <h3 class="text-center">Review Us</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="/process-review-form" method="post">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactNumberField" class="form-label">Contact number</label>
+                            <input name="phone" type="number" class="form-control" id="contactNumberField">
+                            <div class="form-floating mt-4">
+                                <textarea name="query" class="form-control" placeholder="Enter your query here"
+                                    id="queryField" style="height: 100px"></textarea>
+                                <label for="queryField">Your review</label>
+                            </div>
+                        </div>
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{!-- about section --}}
+    {{#each about}}
+    <section id="about_section" class="py-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>About Us</h3>
+                    <p>{{this.text}}</p>
+                    <button class="btn btn-dark">
+                        contact us
+                    </button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </section>
+
+    <footer class="footer background1 py-2 text-center text">
+        <div class="container">
+            <div class="row">
+                <div class="col-mg-12">
+                    <span>@2024 website made by Dharmik Kurlawala</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
