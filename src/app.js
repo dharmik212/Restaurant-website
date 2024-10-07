@@ -32,8 +32,7 @@ hbs.registerPartials("views/partials");
 //DB connection for online mongoDB atlas
 async function startServer() {
   try {
-    const dbUri =
-      "${{ vars.DBURL}}";
+    const dbUri ="mongodb+srv://Dharmik:Kurlawala212@website.lr97j.mongodb.net/?retryWrites=true&w=majority&appName=website";
     await mongoose.connect(dbUri, {});
     console.log("Database connected successfully");
 
