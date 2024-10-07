@@ -171,8 +171,8 @@ async function startServer() {
     //   ],
     // });
 
-    app.listen(process.env.PORT || 5558, () => {
-      console.log("Server started on port", process.env.PORT || 5558);
+    app.listen(process.env.PORT || 4000, () => {
+      console.log("Server started on port", process.env.PORT || 4000);
     });
   } catch (err) {
     console.error(
