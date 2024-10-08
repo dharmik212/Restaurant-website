@@ -12,7 +12,6 @@ const Banner3 = require("./models/Banner3");
 const About = require("./models/About");
 const Gallery = require("./models/Gallery");
 const dotenv = require("dotenv");
-const mongoose = require("mongoose");
 
 const routes = require("./routes/main");
 
