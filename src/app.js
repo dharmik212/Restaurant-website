@@ -11,6 +11,8 @@ const Banner2 = require("./models/Banner2");
 const Banner3 = require("./models/Banner3");
 const About = require("./models/About");
 const Gallery = require("./models/Gallery");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 
 const routes = require("./routes/main");
 
@@ -30,9 +32,10 @@ app.set("views", "views");
 hbs.registerPartials("views/partials");
 
 //DB connection for online mongoDB atlas
+dotenv.config();
 async function startServer() {
   try {
-    const dbUri ="mongodb+srv://Dharmik:Kurlawala212@website.lr97j.mongodb.net/?retryWrites=true&w=majority&appName=website";
+    const dbUri = process.env.PW;
     await mongoose.connect(dbUri, {});
     console.log("Database connected successfully");
 
